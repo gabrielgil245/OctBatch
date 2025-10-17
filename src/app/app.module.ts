@@ -18,6 +18,8 @@ import { DataService } from './services/data.service';
 import { BookService } from './services/book.service';
 import { HttpClientModule } from '@angular/common/http';
 import { BookComponent } from './components/book/book.component';
+import { DepartmentComponent } from './components/department/department.component';
+import { DepartmentDetailsComponent } from './components/department-details/department-details.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,9 @@ import { BookComponent } from './components/book/book.component';
     RegistrationFormComponent,
     ServiceDemoComponent,
     ViewBookComponent,
-    BookComponent
+    BookComponent,
+    DepartmentComponent,
+    DepartmentDetailsComponent
   ],
   imports: [
     BrowserModule,

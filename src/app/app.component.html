@@ -1,5 +1,21 @@
 <h1>Hello {{title}}!</h1>
-<app-book></app-book>
+
+<h1>Routing Demo</h1>
+<div class="mt-3">
+    <button class="btn btn-primary" routerLink="/parent">Parent Component</button>
+</div>
+<div class="mt-3">
+    <a routerLink="/pipe">Pipe Demo Component</a>
+</div>
+<div class="mt-3">
+    <a routerLink="/dashboard">Dashboard Component</a>
+</div>
+<div class="my-3">
+    <a routerLink="/department">Department Component</a>
+</div>
+<router-outlet></router-outlet>
+
+<!-- <app-book></app-book>
 <hr>
 <br/>
 <app-view-book></app-view-book>
@@ -23,4 +39,4 @@
 <app-directives></app-directives>
 <hr>
 <br/>
-<app-demo></app-demo>
+<app-demo></app-demo> -->
