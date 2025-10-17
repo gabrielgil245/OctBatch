@@ -1,0 +1,39 @@
+<h1>Pipe Demo</h1>
+
+<h1>{{"Angular Pipes"}}</h1>
+<h2>{{ "Angular" | uppercase }}</h2>
+<h2>{{ "Angular" | lowercase }}</h2>
+<h2>{{ "Angular is awesome!" | titlecase }}</h2>
+<h1>{{"Currency Pipe"}}</h1>
+<h2>{{ 10000 | currency }}</h2>
+<h2>{{ 10000 | currency : 'EUR' }}</h2>
+<h2>{{ 10000 | currency : 'CAD' : 'code' }}</h2>
+<h2>{{ 10000 | currency : 'CAD' : 'symbol' }}</h2>
+<h2>{{ 10000 | currency : 'CAD' : 'symbol-narrow' }}</h2>
+<h2>{{ 10000.1234 | currency : 'CAD' : 'symbol-narrow' : '6.2-3' }}</h2>
+<h1>{{"Date Pipe"}}</h1>
+<h2>{{ "6/2/2017" | date }}</h2>
+<h2>{{ "6/2/2017" | date : 'medium' }}</h2>
+<h2>{{ "6/2/2017" | date : 'short' }}</h2>
+<h2>{{ "6/2/2017" | date : 'long' }}</h2>
+<h2>{{ "6/2/2017" | date : 'full' }}</h2>
+<h2>{{ "6/2/2017" | date : 'longDate' }}</h2>
+<h2>{{ "6/2/2017" | date : 'mediumDate' }}</h2>
+<h2>{{ "6/2/2017" | date : 'shortDate' }}</h2>
+<h2>{{ "6/2/2017" | date : 'fullDate' }}</h2>
+<h2>{{ "6/2/2017" | date : 'mediumTime' }}</h2>
+<h2>{{ "6/2/2017" | date : 'shortTime' }}</h2>
+<h2>{{ "6/2/2017" | date : 'longTime' }}</h2>
+<h2>{{ "6/2/2017" | date : 'fullTime' }}</h2>
+<h2>{{ today | date : 'full' }}</h2>
+<h1>Percent Pipe</h1>
+<h1>{{ 0.1 | percent }}</h1>
+<h1>{{ 0.1 | percent : '3.1-2' }}</h1>
+<h1>Slice Pipe</h1>
+<h2>{{ "Angular" }}</h2>
+<h2>{{ "Angular" | slice : 3 }}</h2>
+<h2>{{ "Angular" | slice : 3 : 6 }}</h2>
+<h2>{{ "Angular" | slice : -3 }}</h2>
+<h2>{{ "Angular" | slice : -3 : -1 }}</h2>
+<h1>Custom Pipes</h1>
+<h2>{{ "xx*yz" | replace : '-' }}</h2>

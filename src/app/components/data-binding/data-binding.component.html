@@ -1,0 +1,28 @@
+<h1>Data Binding</h1>
+
+<h2>Property Binding</h2>
+
+<div>
+    <a [href]="url">Navigate to Goolge</a>
+</div>
+<br/>
+<div>
+    <button [disabled]="isEnabled">Disable Example 1</button>
+    <!-- In this example, [disabled] is checking for statement expression -->
+    <br/>
+    <br/>
+    <button disabled="{{isEnabled}}">Disable Example 2</button>
+    <!-- In this example, Interporlation is converting the value to a string, so by expression if the string is not an empty string, then the value is truey causing the button to disable -->
+</div>
+<br/>
+<hr>
+<!-- <h2>Attribute Binding</h2> -->
+<!-- <td [atr.colSpan]="2 + 3">Hello</td> -->
+<!-- <td colSpan="{{2 + 3}}">World</td> -->
+
+<h2>Two-way data binding - [(ngModel)]</h2>
+<!-- Banana in a box syntax [()] -->
+<!-- HTML to TS (event), TS to HTML [] -->
+
+<span>Enter username: </span><input type="text" [(ngModel)]="username"><span> {{username}}</span>
+<!-- Behind the scenees, this is the equivalent to... <input [ngModel]="username" (ngModelChange)=username=$event"> -->

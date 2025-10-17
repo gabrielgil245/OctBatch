@@ -1,0 +1,7 @@
+<h1>Parent component starts here</h1>
+<app-child [childTitle]="title" (childEvent)="receiveData($event)" #child></app-child>
+<h2>{{ parentTitle }}</h2>
+<div>
+    <button (click)="child.showExportAsData()">Export As Example</button>
+</div>
+<h1>Parent component ends here</h1>

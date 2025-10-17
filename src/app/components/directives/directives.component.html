@@ -1,0 +1,72 @@
+<h1>Structural Direcives - *ngIf, *ngSwitch, *ngFor</h1>
+<!-- Used to change the DOM structure by adding/removing the DOM elements -->
+
+<div>
+    <h2>*ngIf - conditionally render the DOM elements</h2>
+    <div>
+        <button (click)="this.isViewable = !this.isViewable;">Toggle Paragraph</button>
+    </div>
+    <p *ngIf="isViewable">This paragraph is conditionally rendered using *ngIf</p>
+</div>
+
+<div>
+    <h2>*ngFor - to iterate over the loop</h2>
+    <ul>
+        <li *ngFor="let course of courses; let i = index">{{i + 1}} - {{course}}</li>
+    </ul>
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let user of users">
+                    <td>{{user.name}}</td>
+                    <td>{{user.age}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div>
+    <h2>*ngSwitch</h2>
+    <div [ngSwitch]="choice">
+        <p *ngSwitchCase="1">First Choice</p>
+        <p *ngSwitchCase="2">Second Choice</p>
+        <p *ngSwitchCase="3">Third Choice</p>
+        <p *ngSwitchCase="4">Fourth Choice</p>
+        <p *ngSwitchDefault>Default Choice</p>
+    </div>
+    <div>
+        <button (click)="choice = choice + 1">Next Choice</button>
+    </div>
+</div>
+
+<br/>
+<hr>
+
+<h1>Attribute Direcives - ngStyle, ngClass</h1>
+<!-- Used to change the appearance of an element -->
+<h2>Style binding - to set the single CSS property dynamically</h2>
+
+<p [style.color]="colorName">Style Binding - Example 1</p>
+<!-- Variable's string value assigned to tag style -->
+
+<h2>ngStyle - to set multiple CSS properties dynamically</h2>
+
+<p [ngStyle]="{color: colorName, backgroundColor: bgColor, 'font-size': fontSize}">Style Binding - Example 2</p>
+<!-- Note: the CSS properties may either be typed in camel case when the property is hyphenated without single quotes, or write the exact property name with hyphens with single quotes -->
+
+<p [ngStyle]="styleObject">Style Binding - Example 3</p>
+
+<p [style.color]="'red'">Style Binding - Example 4</p>
+<!-- String value assigned to tag style -->
+
+<h2>Class binding - to set the single CSS class dynamically</h2>
+<p [class.highlight1]="applyClass1">Class Binding - Example 1</p>
+
+<p [ngClass]="{highlight1: applyClass1, highlight2: applyClass2}">Class Binding - Example 2</p>

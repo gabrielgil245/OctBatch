@@ -1,0 +1,10 @@
+<h1>GET Request - Server Communication with HttpClient Demo</h1>
+
+<h2>Get Books Details</h2>
+<button class="btn btn-primary" (click)="showBooks()">Show Books</button>
+
+<ul *ngIf="books.length > 0">
+    <li *ngFor="let book of books">
+        <span>ID: {{ book.id }}; </span><span>Name: {{ book.name }}</span>
+    </li>
+</ul>

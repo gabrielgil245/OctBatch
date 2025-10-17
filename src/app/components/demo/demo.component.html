@@ -1,0 +1,11 @@
+<p>demo works!</p>
+
+<div>
+    <span>Enter a course: </span> <input type="text" #course>
+</div>
+<div>
+    <span>You entered: {{courseName}}</span>
+</div>
+<div>
+    <button (click)="updateCourseName(course.value)">Change Course Name</button>
+</div>

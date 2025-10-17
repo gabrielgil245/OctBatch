@@ -1,0 +1,56 @@
+<h1>Reactive Form Example</h1>
+
+<div class="container">
+    <h2>Registration Form</h2>
+    <form [formGroup]="registrationForm">
+        <div class="form-group">
+            <label class="form-label">First Name</label>
+            <input type="text" class="form-control" formControlName="firstName">
+            <div *ngIf="registrationForm.get('firstName')?.dirty && registrationForm.get('firstName')?.errors" class="alert alert-danger">
+                <span>The field is invalid.</span>
+                <span *ngIf="registrationForm.get('firstName')?.errors?.['required']">
+                    This field is required!
+                </span>
+                <span *ngIf="registrationForm.get('firstName')?.errors?.['minlength']">
+                    This field should be a minimum of 3 characters
+                </span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-label">Last Name</label>
+            <input type="text" class="form-control" formControlName="lastName">
+            <div *ngIf="registrationForm.get('lastName')?.dirty && registrationForm.get('lastName')?.errors" class="alert alert-danger">
+                <span>The field is invalid.</span>
+                <span *ngIf="registrationForm.get('lastName')?.errors?.['required']">
+                    This field is required!
+                </span>
+                <span *ngIf="registrationForm.get('lastName')?.errors?.['minlength']">
+                    This field should be a minimum of 3 characters
+                </span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-label">Email</label>
+            <input type="email" class="form-control" formControlName="email">
+            <div *ngIf="registrationForm.get('email')?.dirty && registrationForm.get('email')?.errors" class="alert alert-danger">
+                <span>The field is invalid.</span>
+                <span *ngIf="registrationForm.get('email')?.errors?.['required']">
+                    This field is required!
+                </span>
+                <span *ngIf="registrationForm.get('email')?.errors?.['emailInvalid']">
+                    {{ registrationForm.get('email')?.errors?.['emailInvalid']?.message }}
+                </span>
+            </div>
+        </div>
+        <div class="pt-3">
+            <button class="btn btn-primary" type="submit" [disabled]="registrationForm.invalid" (click)="submitted = true">Submit</button>
+        </div>
+    </form>
+
+    <div [hidden]="!submitted">
+        <h2>Registration Details</h2>
+        <p>First Name: {{ registrationForm.get('firstName')?.value }}</p>
+        <p>Last Name: {{ registrationForm.get('lastName')?.value }}</p>
+        <p>Email: {{ registrationForm.get('email')?.value }}</p>
+    </div>
+</div>
