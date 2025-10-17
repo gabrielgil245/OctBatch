@@ -20,6 +20,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { BookComponent } from './components/book/book.component';
 import { DepartmentComponent } from './components/department/department.component';
 import { DepartmentDetailsComponent } from './components/department-details/department-details.component';
+import { EmailValidatorDirective } from './validators/email-validator.directive';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { DepartmentDetailsComponent } from './components/department-details/depa
     ViewBookComponent,
     BookComponent,
     DepartmentComponent,
-    DepartmentDetailsComponent
+    DepartmentDetailsComponent,
+    EmailValidatorDirective
   ],
   imports: [
     BrowserModule,
